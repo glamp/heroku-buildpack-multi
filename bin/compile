@@ -12,6 +12,16 @@ function indent() {
 
 unset GIT_DIR
 
+BUILDPACKS="
+    https://github.com/wballard/heroku-buildpack-nodejs.git
+    https://github.com/glamp/heroku-buildpack-python-sklearn.git
+"
+for BUILDPACK in $BUILDPACKS
+do
+  echo "${BUILDPACK}"
+done
+exit 0
+
 for BUILDPACK in $(cat $1/.buildpacks); do
   dir=$(mktemp -t buildpackXXXXX)
   rm -rf $dir
