@@ -18,11 +18,6 @@ BUILDPACKS="
 "
 for BUILDPACK in $BUILDPACKS
 do
-  echo "${BUILDPACK}"
-done
-exit 0
-
-for BUILDPACK in $(cat $1/.buildpacks); do
   dir=$(mktemp -t buildpackXXXXX)
   rm -rf $dir
 
